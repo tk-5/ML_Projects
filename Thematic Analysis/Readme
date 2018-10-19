@@ -1,0 +1,16 @@
+Folder that contains code for Approach#2 - theme detection based on summarization and mining of co-occurrence networks
+
+Create_Corpus.ipynb : 
+code for creating a corpus from a set of json files
+
+Summarize_corpus.ipynb : 
+code for reading articles from json fies -> generating extractive summary of each article -> saving the entire summary data as 
+a single corpus.
+                        
+Improvised_Cooccurrence_N_grams_base.ipynb : 
+Main code file. It requires a text corpus created either by Create_Corpus.ipynb Or by Summarize_corpus.ipynb.
+After reading the corpus it does pre-processing - tokenization , stop word removal, ngram addition, lemmatization.
+Then it performs LDA (topic modelling)
+It makes co-occurrence network from the topics derived from LDA
+then it generates n-grams (up to 5 gram) by mining the co-occurrence network.
+              
