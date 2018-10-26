@@ -7,10 +7,20 @@ Summarize_corpus.ipynb :
 code for reading articles from json fies -> generating extractive summary of each article -> saving the entire summary data as 
 a single corpus.
                         
-Improvised_Cooccurrence_N_grams_base.ipynb : 
+Improvised_Cooccurrence_N_grams_base.ipynb :    
+Implements theme identification without filtering them based on any domain. working as same as mentioned below without the 
+domain filtering part.
+
+Improvised_Cooccurrence_N_grams_domainFiltering.ipynb :
 Main code file. It requires a text corpus created either by Create_Corpus.ipynb Or by Summarize_corpus.ipynb.
 After reading the corpus it does pre-processing - tokenization , stop word removal, ngram addition, lemmatization.
 Then it performs LDA (topic modelling)
-It makes co-occurrence network from the topics derived from LDA
+In this code we extract bigger output from LDA (30 topics) then we perform domain based filtering (set of domains need 
+to be specified by the user in the code) and get the topics which qualify to be in selected domains.
+To implement domain filtering - an extension to Wordnet is used which supplies word-> Domain filtering. 
+Link - https://github.com/bogdan-ivanov/wnext  
+To make the code work the code of the above mentioned repository has to be put into the directory as the Improvised_Cooccurrence_N_grams_base.ipynb
+
+It then makes co-occurrence network from the topics derived from domain filtering
 then it generates n-grams (up to 5 gram) by mining the co-occurrence network.
               
