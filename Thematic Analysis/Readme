@@ -7,7 +7,7 @@ Summarize_corpus.ipynb :
 code for reading articles from json fies -> generating extractive summary of each article -> saving the entire summary data as 
 a single corpus.
                         
-Improvised_Cooccurrence_N_grams_base.ipynb :    
+Improvised_Cooccurrence_N_grams_base.ipynb :    --- Deprecated 
 Implements theme identification without filtering them based on any domain. working as same as mentioned below without the 
 domain filtering part.
 
@@ -24,3 +24,6 @@ To make the code work the code of the above mentioned repository has to be put i
 It then makes co-occurrence network from the topics derived from domain filtering
 then it generates n-grams (up to 5 gram) by mining the co-occurrence network.
               
+Now the code file has been modified to make the co-occurrence networks using the composite edge weighing scheme (Inverse 
+topic frequency + Direct topic frequency) up to 4grams. 5gram networks gets very confusing so based on experiments 4gram networks 
+seemed most appropriate.
